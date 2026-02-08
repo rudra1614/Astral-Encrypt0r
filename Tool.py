@@ -9,7 +9,7 @@ from Crypto.Cipher import AES
 
 class CosmicEncryptor:
     def __init__(self):
-        self.api_key = "DEMO_KEY"
+        self.api_key = "mELZsFr2P3SJoCDK6KYSzhBaVBI3WGmxIZjSxjbP"
         self.curve = ec.SECP256R1()
 
     def fetch_universe_entropy(self):
