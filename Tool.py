@@ -48,7 +48,7 @@ class CosmicEncryptor:
         with open(pub_name, "wb") as f:
             f.write(public_key.public_bytes(
                 encoding=serialization.Encoding.PEM,
-                format=serialization.SubjectPublicKeyInfo
+                format=serialization.PublicFormat.SubjectPublicKeyInfo
             ))
         print(f"[+] Success! Keys saved as '{priv_name}' and '{pub_name}'")
 
