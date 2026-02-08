@@ -1,55 +1,59 @@
-🌌 Cosmic-Shield: Entropy-Driven Hybrid Encryption
+🌌 Cosmic-Shield v2.0
+Entropy-Driven Hybrid Encryption Suite
 
-Cosmic-Shield is a Python-based security suite that leverages the inherent uncertainties of the universe to generate unbreakable cryptographic keys. By harvesting real-time telemetry of Near-Earth Objects (asteroids) from NASA's APIs, the tool ensures that the "root of trust" for encryption is derived from true physical entropy rather than predictable software algorithms.
-🛠 Features
+Cosmic-Shield is a high-integrity security tool that derives cryptographic "Roots of Trust" from the unpredictable state of the universe. By harvesting real-time telemetry of Near-Earth Objects (asteroids) from NASA's APIs, the tool ensures that encryption keys are born from true physical entropy.
+🚀 Key Features
 
-    Cosmic Entropy Harvesting: Uses real-time asteroid velocity and orbital data from NASA's NeoWs API to seed key generation.
+    Cosmic Entropy Harvesting: Uses real-time asteroid velocity and orbital data from NASA's NeoWs API to seed keys.
 
-    Asymmetric Identity (ECC): Implements Elliptic Curve Cryptography (SECP256R1) for secure identity and key exchange.
+    Multi-Identity Management: Generate and manage multiple key pairs (e.g., work, personal) without overwriting data.
 
-    Hybrid Encryption: Combines the security of ECC with the high-speed performance of AES-256-GCM.
+    Hybrid Asymmetric Architecture: * ECC (SECP256R1): For secure identity and key exchange.
 
-    Authenticated Decryption: Uses GCM "Tags" to ensure file integrity—if the file is tampered with, decryption fails.
+        AES-256-GCM: For industrial-grade, authenticated file encryption.
 
-    Persistent Storage: Serializes keys into industry-standard .pem formats (PKCS8).
+    Linux Path-Safety: Fully optimized for absolute and relative paths using os.path utilities.
 
-🚀 Technical Architecture
+    Tamper Detection: Authenticated encryption ensures that any modification to the ciphertext results in a decryption failure.
 
-The tool follows the ECDH (Elliptic Curve Diffie-Hellman) key agreement protocol:
+🛠 Technical Stack
 
-    Entropy: NASA Telemetry → SHA-256 Hash → Entropy Seed.
+    Language: Python 3.x
 
-    Key Gen: Seed → Private Key → Public Key Allotment.
+    Crypto: cryptography.io (ECC/ECDH/HKDF), pycryptodome (AES-GCM)
 
-    Encryption: Ephemeral Key + Recipient Public Key → Shared Secret → AES Key → Encrypted File.
+    Entropy Source: NASA NeoWs (Near-Earth Object Web Service)
 
-📦 Installation
+    Serialization: PKCS8 / X.509 PEM formats
 
-    Clone the repository:
+📥 Installation & Setup
+
+    Clone the Repo:
     Bash
 
-    git clone https://github.com/yourusername/cosmic-shield.git
+    git clone https://github.com/yourusername/Real-Time-Asteroid-Telemetry-Based-Encryption-Tool.git
+    cd Real-Time-Asteroid-Telemetry-Based-Encryption-Tool
 
-    Set up a virtual environment:
+    Virtual Environment:
     Bash
 
-    python -m venv venv
-    source venv/bin/activate  # Windows: .\venv\Scripts\activate
+    python3 -m venv venv
+    source venv/bin/activate
 
-    Install dependencies:
+    Install Dependencies:
     Bash
 
     pip install -r requirements.txt
 
-🖥 Usage
+🖥 How to Use
 
-Run the main orchestrator:
+Run the suite using:
 Bash
 
-python main.py
+python Tool.py
 
-    Option 1: Generate your Cosmic Identity (creates cosmic_private.pem and cosmic_public.pem).
+    Generate Identity: Create a named key pair (e.g., placement_key).
 
-    Option 2: Select a file to lock using your Public Key.
+    Encrypt: Provide a file path and the identity name. The tool generates a .cosmic file.
 
-    Option 3: Unlock a .cosmic file using your Private Key.
+    Decrypt: Provide the .cosmic file path and your identity name to recover the original file.
