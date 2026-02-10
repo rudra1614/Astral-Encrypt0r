@@ -1,49 +1,57 @@
-🌌 Astral-Encrypt0r v2.0
-Entropy-Driven Hybrid Encryption Suite
+🚀 Astral-Encrypt0r: Hybrid Entropy Encryption Suite
 
-Astral-Encrypt0r is a high-integrity security tool that derives cryptographic "Roots of Trust" from the unpredictable state of the universe. By harvesting real-time telemetry of Near-Earth Objects (asteroids) from NASA's APIs, the tool ensures that encryption keys are born from true physical entropy.
-🚀 Key Features
+Astral-Encrypt0r is a high-integrity cryptographic tool that bridges astronomical physics with modern cybersecurity. It leverages real-time asteroid telemetry from NASA’s NeoWs API as a non-deterministic entropy source to seed industry-standard hybrid encryption (ECC + AES-GCM).
+🌟 Key Features
 
-    Cosmic Entropy Harvesting: Uses real-time asteroid velocity and orbital data from NASA's NeoWs API to seed keys.
+    Celestial Entropy Harvesting: Uses live NASA orbital data (velocity, miss-distance, and orbit determination timestamps) to initialize cryptographic seeds.
 
-    Multi-Identity Management: Generate and manage multiple key pairs (e.g., work, personal) without overwriting data.
+    Hybrid Asymmetric Architecture: * Identity: Elliptic Curve Cryptography (SECP256R1) for robust, efficient key management.
 
-    Hybrid Asymmetric Architecture: * ECC (SECP256R1): For secure identity and key exchange.
+        Encryption: AES-256-GCM for high-speed file encryption with built-in integrity verification (Authenticated Encryption).
 
-        AES-256-GCM: For industrial-grade, authenticated file encryption.
+    Defense-in-Depth Entropy: Implements a Hybrid Seed Model that mixes public NASA telemetry with local high-precision system noise (time_ns) and OS-level entropy (os.urandom).
 
-    Linux Path-Safety: Fully optimized for absolute and relative paths using os.path utilities.
+    Security at Rest: Private keys are stored using PKCS8 serialization and are encrypted with a Master Password using PBKDF2/Scrypt.
 
-    Tamper Detection: Authenticated encryption ensures that any modification to the ciphertext results in a decryption failure.
+    Tamper Detection: Automatically detects and rejects files if even a single bit has been altered during storage or transit.
 
-🛠 Technical Stack
+🛠️ Technical Stack
 
     Language: Python 3.x
 
-    Crypto: cryptography.io (ECC/ECDH/HKDF), pycryptodome (AES-GCM)
+    Libraries: cryptography.io, requests, hashlib
 
-    Entropy Source: NASA NeoWs (Near-Earth Object Web Service)
+    API: NASA Near-Earth Object Web Service (NeoWs)
 
-    Serialization: PKCS8 / X.509 PEM formats
+    Security Standards: NIST-compliant curves and authenticated encryption modes.
 
-📥 Installation & Setup
+🚀 Getting Started
+1. Prerequisites
 
-    Clone the Repo:
-    Bash
+Ensure you have Python installed and the necessary cryptographic libraries:
+Bash
 
-    git clone https://github.com/yourusername/Real-Time-Asteroid-Telemetry-Based-Encryption-Tool.git
-    cd Real-Time-Asteroid-Telemetry-Based-Encryption-Tool
+pip install cryptography requests
 
-    Virtual Environment:
-    Bash
+2. Installation
+Bash
 
-    python3 -m venv venv
-    source venv/bin/activate
+git clone https://github.com/your-username/Astral-Encrypt0r.git
+cd Astral-Encrypt0r
 
-    Install Dependencies:
-    Bash
+3. Usage
 
-    pip install -r requirements.txt
+Run the interactive suite:
+Bash
+
+python Tool.py
+
+    Create Identity: Generates your celestial-seeded key pair.
+
+    Encrypt File: Locks any file using your ECC identity and NASA entropy.
+
+    Decrypt File: Unlocks your .cosmic files and verifies they haven't been tampered with.
+
 
 🖥 How to Use
 
@@ -72,4 +80,7 @@ Decrypt: Provide the .cosmic file path and your identity name to recover the ori
     
 <img width="108" height="118" alt="image" src="https://github.com/user-attachments/assets/3406409f-f10c-4617-86ca-4ca87ae7ea4a" />
 
+🔬 Cryptographic Philosophy
+
+This project adheres to Kerckhoffs's Principle: the security of the system resides entirely in the key, not the secrecy of the algorithm. By utilizing external, physical phenomena (asteroid orbits) for entropy, Astral-Encrypt0r mitigates the risks associated with predictable software-based PRNGs, similar to the philosophy used in Cloudflare’s LavaRand.
 
