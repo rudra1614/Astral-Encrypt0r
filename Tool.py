@@ -9,7 +9,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 class CosmicShield:
     def __init__(self):
-        self.api_url = "mELZsFr2P3SJoCDK6KYSzhBaVBI3WGmxIZjSxjbP"
+        self.api_url = "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=false&api_key=mELZsFr2P3SJoCDK6KYSzhBaVBI3WGmxIZjSxjbP"
         self.curve = ec.SECP256R1()
 
     def fetch_hybrid_entropy(self):
